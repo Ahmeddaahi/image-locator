@@ -1,7 +1,6 @@
 'use client';
 
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import { useMemo } from 'react';
 
 interface MapDisplayProps {
   location: {
