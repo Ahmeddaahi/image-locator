@@ -16,11 +16,6 @@ const mapContainerStyle = {
 };
 
 export default function MapDisplay({ location }: MapDisplayProps) {
-  const markerIcon = useMemo(() => ({
-    url: '/marker.svg',
-    scaledSize: { width: 40, height: 40 }
-  }), []);
-
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -59,7 +54,6 @@ export default function MapDisplay({ location }: MapDisplayProps) {
           >
             <Marker 
               position={location}
-              icon={markerIcon}
             />
           </GoogleMap>
         </LoadScript>
