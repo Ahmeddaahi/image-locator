@@ -11,12 +11,10 @@ interface ImageUploaderProps {
 
 export default function ImageUploader({ onUpload, onRemove }: ImageUploaderProps) {
   const [preview, setPreview] = useState<string | null>(null);
-  const [file, setFile] = useState<File | null>(null);
 
   const onDrop = useCallback((acceptedFiles: File[]) => {
     if (acceptedFiles.length > 0) {
       const selectedFile = acceptedFiles[0];
-      setFile(selectedFile);
       onUpload(selectedFile);
       
       // Create preview URL
@@ -38,7 +36,6 @@ export default function ImageUploader({ onUpload, onRemove }: ImageUploaderProps
 
   const handleRemove = () => {
     setPreview(null);
-    setFile(null);
     onRemove();
   };
 
